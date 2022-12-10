@@ -1,0 +1,39 @@
+public class BALLS {
+    public static class Worker {
+        public final String fullName, post, email, numberPhone;
+        public final int salary, age;
+
+        public Worker(String fullName, String post, String email, String numberPhone, int salary, int age) {
+            this.fullName = fullName;
+            this.post = post;
+            this.email = email;
+            this.numberPhone = numberPhone;
+            this.salary = salary;
+            this.age = age;
+        }
+
+        public void printInformation() {
+            var info = String.format("ФИО: %s\r\nДолжность: %s\r\nemail: %s\r\nТелефон: %s\r\n" +
+                            "Зарплата: %s\r\nВозраст: %s", this.fullName, this.post, this.email, this.numberPhone,
+                    this.salary, this.age);
+            info.lines().forEach(System.out::println);
+        }
+    }
+
+    public static void main(String[] args) {
+        Worker[] workerList = new Worker[5];
+        workerList[0] = new Worker("ASD", "aouj", "bigballs@slap.face", "23456987", 1000, 49);
+        workerList[1] = new Worker("GHJ", "bibi", "slickDaddy@slap.face", "34567627", 993, 42);
+        workerList[2] = new Worker("BPM", "tysm", "cumbusters@slap.face", "93248623", 986, 35);
+        workerList[3] = new Worker("BBC", "qwer", "generalhs@slap.face", "29384732", 979, 28);
+        workerList[4] = new Worker("TRT", "ugar", "asapcocky@slap.face", "78236482", 972, 21);
+
+        for (Worker workers : workerList) {
+            if (workers.age > 27) {
+                System.out.println("--------------------------");
+                workers.printInformation();
+            }
+        }
+        System.out.println("--------------------------");
+    }
+}
